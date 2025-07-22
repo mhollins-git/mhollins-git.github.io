@@ -10,3 +10,6 @@ function getRandomWolf()
 {
     return wolfImages.at( Math.random() * wolfImages.length )
 }
+
+var meta = document.getElementsByTagName("meta")[0];
+meta.content = getRandomWolf();
