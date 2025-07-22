@@ -8,8 +8,12 @@ const wolfImages = [
 
 function getRandomWolf()
 {
-    return wolfImages.at( Math.random() * wolfImages.length )
+    return wolfImages.at( Math.random() * wolfImages.length );
 }
 
-var meta = document.getElementsByTagName("meta")[0];
-meta.content = getRandomWolf();
+document.addEventListener('DOMContentLoaded', function() {
+    var meta = document.createElement( 'meta' );
+    meta.setAttribute('property', 'og:image');
+    meta.setAttribute('content', getRandomWolf());
+    document.head.appendChild( meta );
+});
